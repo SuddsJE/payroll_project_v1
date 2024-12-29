@@ -1,0 +1,13 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* Adjust for navbar height */
+    text-align: center;
+  }
+  
+  .home-container h1 {
+    font-size: 4rem;
+    color: #333;
+  }
+  
