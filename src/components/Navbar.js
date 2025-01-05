@@ -5,7 +5,7 @@ import "../styles/Navbar.css";
 function Navbar() {
   return (
     <nav className="navbar">
-      <h1>Time Tracker App</h1>
+      <h1>Payroll Modules</h1>
       <ul className="nav-links">
         <li>
           <Link to="/">Home</Link>
