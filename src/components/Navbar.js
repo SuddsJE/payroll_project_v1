@@ -13,6 +13,9 @@ function Navbar() {
         <li>
           <Link to="/time-tracker">Time Tracker</Link>
         </li>
+        <li>
+          <Link to="/trs-calculator">TRS Calculator</Link>
+        </li>
       </ul>
     </nav>
   );
