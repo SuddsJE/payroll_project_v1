@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles/TimeCalculator.css'; // Optional: Create a specific stylesheet for this component
+import '../styles/TimeCalculator.css';
 
 function TimeCalculator({ days }) {
     const [times, setTimes] = useState(
@@ -7,13 +7,16 @@ function TimeCalculator({ days }) {
     );
   
     const roundToNearestQuarter = (time) => {
-      if (!time) return "";
-      const [hours, minutes] = time.split(":").map(Number);
+      if (!time) return ""; //takes care of empty or invalid inputs
+      const [hours, minutes] = time.split(":").map(Number); //grabs the hours and minutes splitting by :
   
-      const roundedMinutes = Math.round(minutes / 15) * 15;
+      const roundedMinutes = Math.round(minutes / 15) * 15; //rounds minutes to nearest 15 minutes
+
+      // adjusting for edge cases, 60 min becomes 0 min plus 1 hour
       const adjustedHours = roundedMinutes === 60 ? hours + 1 : hours;
       const finalMinutes = roundedMinutes === 60 ? 0 : roundedMinutes;
-  
+
+      // ensure 2 digit format
       const formattedHours = String(adjustedHours).padStart(2, "0");
       const formattedMinutes = String(finalMinutes).padStart(2, "0");
   
@@ -50,6 +53,22 @@ function TimeCalculator({ days }) {
   
       return totalHours.toFixed(2);
     };
+
+    const calculateWeeklyTotal = () => {
+        return times.reduce((total, day, index) => {
+          const roundedRow = {
+            in1: roundToNearestQuarter(day.in1),
+            out1: roundToNearestQuarter(day.out1),
+            in2: roundToNearestQuarter(day.in2),
+            out2: roundToNearestQuarter(day.out2),
+            in3: roundToNearestQuarter(day.in3),
+            out3: roundToNearestQuarter(day.out3),
+          };
+      
+          return total + parseFloat(calculateTotalHours(roundedRow));
+        }, 0);
+      };
+      
   
     return (
       <div className="table-container">
@@ -143,6 +162,12 @@ function TimeCalculator({ days }) {
               );
             })}
           </tbody>
+          <tfoot>
+            <tr className='weekly-total'>
+                <td>Weekly Total:</td>
+                <td>{calculateWeeklyTotal().toFixed(2)} hrs </td>
+            </tr>
+          </tfoot>
         </table>
       </div>
     );
