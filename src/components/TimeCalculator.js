@@ -68,10 +68,31 @@ function TimeCalculator({ days }) {
           return total + parseFloat(calculateTotalHours(roundedRow));
         }, 0);
       };
-      
+
+    const clearTable = () => {
+        setTimes(
+          days.map(() => ({ in1: "", out1: "", in2: "", out2: "", in3: "", out3: "" }))
+        );
+      };
+    
+      const standardTime = () => {
+        const updatedTimes = times.map((time, index) => {
+          if (days[index] !== "Saturday" && days[index] !== "Sunday") {
+            return { ...time, in1: "07:00",out1: "11:00",in2: "12:00",out2: "16:00",in3: "",out3: "" };
+          }
+          return time;
+        });
+        setTimes(updatedTimes);
+      };
   
     return (
       <div className="table-container">
+        <div className="timetracker-buttons">
+          <p>Clears the table of all times.</p>
+          <button onClick={clearTable}>Clear the Table</button>
+          <p>Standard Time for all weekdays except Saturday and Sunday.</p>
+          <button onClick={standardTime}>Standard Time</button>
+        </div>
         <table>
           <thead>
             <tr>

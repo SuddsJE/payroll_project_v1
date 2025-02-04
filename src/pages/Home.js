@@ -9,6 +9,10 @@ function Home() {
       <li>TIME TRACKER: Used to keep a weekly track of user's time.
         It will round the input to the nearest quarter following the 7 minute rule.
       </li>
+      <li>
+        !!UPDATED!! 2/3/2025: Added a new feature to the time tracker. 2 buttons with new functions, one will clear the table and the other
+        will add a standard 40 hour week for ease of use.
+      </li>
     </div>
   );
 }

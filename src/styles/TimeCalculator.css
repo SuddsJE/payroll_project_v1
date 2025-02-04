@@ -1,95 +1,114 @@
 /* Container for the table */
 .table-container {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-  }
-  
-  /* Style the table */
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+/* Style the table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 900px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table header */
+thead th {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Table rows */
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Cells */
+td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+th {
+  border: 1px solid #ddd;
+}
+
+/* Inputs inside table */
+input[type="time"] {
+  width: 100px;
+  padding: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Highlight the totals column */
+td:last-child {
+  font-weight: bold;
+  color: #2c3e50;
+  background-color: #e8f4fa;
+}
+
+/* Add hover effect on rows */
+tbody tr:hover {
+  background-color: #d8e9f3;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
   table {
-    border-collapse: collapse;
-    width: 100%;
-    max-width: 900px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Table header */
-  thead th {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  /* Table rows */
-  tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  tbody tr:nth-child(odd) {
-    background-color: #ffffff;
-  }
-  
-  /* Cells */
-  td {
-    padding: 8px;
-    text-align: center;
-    border: 1px solid #ddd;
-  }
-  
-  th {
-    border: 1px solid #ddd;
-  }
-  
-  /* Inputs inside table */
-  input[type="time"] {
-    width: 100px;
-    padding: 5px;
     font-size: 12px;
-    text-align: center;
-  }
-  
-  /* Highlight the totals column */
-  td:last-child {
-    font-weight: bold;
-    color: #2c3e50;
-    background-color: #e8f4fa;
-  }
-  
-  /* Add hover effect on rows */
-  tbody tr:hover {
-    background-color: #d8e9f3;
-  }
-  
-  /* Responsive design for smaller screens */
-  @media (max-width: 768px) {
-    table {
-      font-size: 12px;
-    }
-  
-    input[type="time"] {
-      width: 80px;
-    }
-  
-    th, td {
-      padding: 5px;
-    }
   }
 
-  /* Style for the rounded rows */
-.rounded-row td {
-    background-color: #eef6fc;
-    font-style: italic;
-    color: #555;
+  input[type="time"] {
+    width: 80px;
   }
+
+  th, td {
+    padding: 5px;
+  }
+}
+
+/* Style for the rounded rows */
+.rounded-row td {
+  background-color: #eef6fc;
+  font-style: italic;
+  color: #555;
+}
 
 tfoot{
-    font-weight: bold;
-    background-color: #007bff;
-    color: white;
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
 }
-  
-  
+
+.timetracker-title {
+text-align: center;
+}
+
+.timetracker-buttons {
+display: flex;
+flex-direction: column;
+gap: 20px;
+padding: 20px;
+}
+
+.timetracker-buttons button {
+padding: 10px;
+font-size: 16px;
+background-color: #007bff;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
