@@ -11,6 +11,10 @@ function Home() {
         !!NEW UPDATE!!: There are 2 buttons added to the time tracker. One to clear the input field and the other to
         add the "standard time" for Monday-Friday. The standard time is 8 hours per day.
       </li>
+      <li>
+        !!UPDATED!! 2/3/2025: Added a new feature to the time tracker. 2 buttons with new functions, one will clear the table and the other
+        will add a standard 40 hour week for ease of use.
+      </li>
     </div>
   );
 }
