@@ -6,6 +6,7 @@ function TimeTrackerPage() {
   const days = ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
   return (
     <div className="time-tracker-page">
+      <h1 className="timetracker-title">Time Tracker</h1>
       <TimeCalculator days={days} />
     </div>
   );
