@@ -8,6 +8,8 @@ function Home() {
       <p>This site is a WIP. I will be adding more "modules" as I progress. Here are the current modules and what they do: </p>
       <li>TIME TRACKER: Used to keep a weekly track of user's time.
         It will round the input to the nearest quarter following the 7 minute rule.
+        !!NEW UPDATE!!: There are 2 buttons added to the time tracker. One to clear the input field and the other to
+        add the "standard time" for Monday-Friday. The standard time is 8 hours per day.
       </li>
       <li>
         !!UPDATED!! 2/3/2025: Added a new feature to the time tracker. 2 buttons with new functions, one will clear the table and the other
